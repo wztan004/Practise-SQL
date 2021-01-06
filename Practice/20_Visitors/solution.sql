@@ -1,0 +1,7 @@
+WITH T1 AS (
+SELECT *, people>=100 as s FROM visitors)
+
+SELECT visit_date,people FROM (
+SELECT *, SUM(s) OVER (ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) pre, SUM(s) OVER (ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING) post FROM T1) ttt
+WHERE pre >= 3 or post >= 3
+;
