@@ -3,50 +3,33 @@ DROP SCHEMA IF EXISTS 26_Movies;
 CREATE SCHEMA 26_Movies;
 USE 26_Movies;
 
-DROP TABLE IF EXISTS `user_read`;
-CREATE TABLE `user_read` (
-    `date` date,
-    `uid` int,
-    `news_id` int,
-    `topic` varchar(20)
+DROP TABLE IF EXISTS `movies`;
+CREATE TABLE `movies` (
+    `id` int,
+    `name` varchar(20)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `ticket_reservation`;
+CREATE TABLE `ticket_reservation` (
+    `id` int,
+    `movie_id` int,
+    `quantity` int
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
-INSERT INTO `user_read` (`date`, `uid`, `news_id`, `topic`) VALUES
-("2018-07-10", 101, 2001, "PE"),
-("2018-07-10", 101, 2002, "Game"),
-("2018-07-10", 101, 2005, "PE"),
-("2018-07-11", 101, 2001, "PE"),
-("2018-07-11", 101, 2002, "Game"),
-("2018-07-13", 101, 2005, "PE"),
-("2018-07-15", 101, 2007, "Econ"),
-
-
-("2018-07-10", 102, 2001, "PE"),
-("2018-07-10", 102, 2003, "Finance"),
-("2018-07-10", 102, 2006, "PE"),
-("2018-07-12", 102, 2001, "PE"),
-("2018-07-12", 102, 2003, "Finance"),
-("2018-07-13", 102, 2006, "PE"),
-("2018-07-15", 102, 2007, "Econ"),
-
--- duplicate user 102 records
-("2018-07-10", 102, 2001, "PE"),
-("2018-07-10", 102, 2003, "Finance"),
-("2018-07-10", 102, 2006, "PE"),
-("2018-07-12", 102, 2001, "PE"),
-("2018-07-12", 102, 2003, "Finance"),
-("2018-07-13", 102, 2006, "PE"),
-("2018-07-15", 102, 2007, "Econ"),
-
-("2018-07-10", 103, 2007, "Econ"),
-("2018-07-11", 103, 2007, "Econ"),
-("2018-07-14", 103, 2007, "Econ"),
-("2018-07-14", 103, 2007, "Econ"),
-("2018-07-16", 103, 2007, "Econ"),
-("2018-07-17", 103, 2007, "Econ"),
-("2018-07-18", 103, 2007, "Econ")
+INSERT INTO `movies` (`id`, `name`) VALUES
+(1, "Beauty and the Beast"),
+(2, "Coco"),
+(3, "Cinderella")
 ;
+
+INSERT INTO `ticket_reservation` (`id`, `movie_id`, `quantity`) VALUES
+(1, 1, 2),
+(2, 1, 5),
+(3, 1, 3),
+(4, 2, 8),
+(5, 2, 3)
+;
+
 
 

@@ -1,6 +1,6 @@
 ## WZ comments
 Based on https://github.com/shawlu95/Beyond-LeetCode-SQL but had to make some changes due to missing data.
-To load data: mysql < db.sql -uroot -p 
+To load data: mysql < db.sql -uroot -p
 When prompted for password: q1w2e3R$
 Refresh MySQL Workbench UI
 Right click > Set as default schema
